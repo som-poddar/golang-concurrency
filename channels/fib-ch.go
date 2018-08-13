@@ -15,11 +15,12 @@ func main() {
 	}
 
 	// receive from chan
-	for _ = range c {
-		fibPrint, ok := <-c
-		if ok {
-			fmt.Printf("%s, ok: %v", fibPrint, ok)
-		}
+	for rcvd, ok = range c {
+		// fibPrint, ok := <-c
+		// if ok {
+		// fmt.Printf("%s, ok: %v", fibPrint, ok)
+		fmt.Printf("%s,", rcvd)
+		// }
 	}
 
 	close(c)
